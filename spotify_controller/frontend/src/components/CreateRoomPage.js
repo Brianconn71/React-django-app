@@ -17,17 +17,28 @@ export default class CreateRoomPage extends Component {
     }
 
     render (){
-        return <Grid container spacing={1}>
+        return( 
+        <Grid container spacing={1}>
             <Grid item xs={12} align="center">
                 <Typography component='h4' variant='h4'>
                     Create
                 </Typography>
-            </Grid>
-            <Grid item xs={12} align="center">
                 <Typography component='h4' variant='h4'>
-                    Create
+                    <FormControl component="fieldset">
+                        <FormHelperText>
+                            <div align="center">ewsfjkhdlasfirgh</div>
+                        </FormHelperText>
+                    </FormControl>
+                    <RadioGroup row defaultValue="true">
+                        <FormControlLabel value="true" control={<Radio></Radio color="primary" />} label="Play/Pause" labelPlacement="bottom" />
+                        <FormControlLabel value="false" control={<Radio></Radio color="secondary" />} label="No control" labelPlacement="bottom" />
+                    </RadioGroup>
                 </Typography>
             </Grid>
-        </Grid>;
+            <Grid item xs={12} align="center">
+                
+            </Grid>
+        </Grid>
+        );
     }
 }
