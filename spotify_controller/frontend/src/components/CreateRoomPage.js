@@ -23,20 +23,30 @@ export default class CreateRoomPage extends Component {
                 <Typography component='h4' variant='h4'>
                     Create
                 </Typography>
-                <Typography component='h4' variant='h4'>
+                <Typography component='h4' align="center" variant='h4'>
                     <FormControl component="fieldset">
                         <FormHelperText>
                             <div align="center">ewsfjkhdlasfirgh</div>
                         </FormHelperText>
                     </FormControl>
                     <RadioGroup row defaultValue="true">
-                        <FormControlLabel value="true" control={<Radio></Radio color="primary" />} label="Play/Pause" labelPlacement="bottom" />
-                        <FormControlLabel value="false" control={<Radio></Radio color="secondary" />} label="No control" labelPlacement="bottom" />
+                        <FormControlLabel value="true" control={<Radio color="primary" />} label="Play/Pause" labelPlacement="bottom" />
+                        <FormControlLabel value="false" control={<Radio color="secondary" />} label="No control" labelPlacement="bottom" />
                     </RadioGroup>
                 </Typography>
             </Grid>
             <Grid item xs={12} align="center">
-                
+                <FormControl>
+                    <TextField required={true} type="number" defaultValue={this.defaultVotes} inputProps={{
+                        min: 1,
+                        style: { textAlign: "center" }
+                    }} />
+                    <FormHelperText>
+                        <div align="center">
+                            Votes required to skip.
+                        </div>
+                    </FormHelperText>
+                </FormControl>
             </Grid>
         </Grid>
         );
