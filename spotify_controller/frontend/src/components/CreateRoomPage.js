@@ -14,6 +14,22 @@ export default class CreateRoomPage extends Component {
     defaultVotes = 2;
     constructor(props){
         super(props);
+        this.state = {
+            guestCanPause: true,
+            votesToSkip: this.defaultVotes,
+        };
+    }
+
+    handleVotesChange(e){
+        this.setState({
+            votesToSkip: e.target.value,
+        });
+    }
+
+    handleGuestCanPauseChange(e) {
+        this.setState({
+            guestCanPause: e.target.value === "true" ? true : false,
+        });
     }
 
     render (){
@@ -23,13 +39,13 @@ export default class CreateRoomPage extends Component {
                 <Typography component='h4' variant='h4'>
                     Create
                 </Typography>
-                <Typography component='h4' align="center" variant='h4'>
+                <Typography component='h4' variant='h4'>
                     <FormControl component="fieldset">
                         <FormHelperText>
                             <div align="center">ewsfjkhdlasfirgh</div>
                         </FormHelperText>
                     </FormControl>
-                    <RadioGroup row defaultValue="true">
+                    <RadioGroup row align="center" defaultValue="true">
                         <FormControlLabel value="true" control={<Radio color="primary" />} label="Play/Pause" labelPlacement="bottom" />
                         <FormControlLabel value="false" control={<Radio color="secondary" />} label="No control" labelPlacement="bottom" />
                     </RadioGroup>
@@ -47,6 +63,16 @@ export default class CreateRoomPage extends Component {
                         </div>
                     </FormHelperText>
                 </FormControl>
+            </Grid>
+            <Grid item xs={12} align="center">
+                <Button color="primary" variant="contained">
+                    Create A Room
+                </Button>
+            </Grid>
+            <Grid item xs={12} align="center">
+                <Button color="secondary" variant="contained" to="/" component={Link}>
+                    Back
+                </Button>
             </Grid>
         </Grid>
         );
